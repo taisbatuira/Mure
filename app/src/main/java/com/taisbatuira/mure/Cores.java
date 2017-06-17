@@ -16,8 +16,11 @@ public class Cores extends TextHighlighter {
         highlighter.setColorForTheToken("Text", "purple");
         highlighter.setColorForTheToken("Highlighter", "blue");
 
-        String[] coresAPI = new String[]{"import","public","class","new","extends","return"};
-        highlighter.setColorForTheToken(coresAPI,"#cc7832");
+        String[] padraoLaranja = new String[]{"import","public","private","protected","class","package","new","extends","return", "static","void", "int", "double", "boolean", "(int", "if", "else", "for", "while", "do", "this.", "true", "String"};
+        highlighter.setColorForTheToken(padraoLaranja,"#cc7832");
+
+        String[] padraoAzul = new String[]{"out"};
+        highlighter.setColorForTheToken(padraoAzul,"#0000FF");
 
         return highlighter.getHighlightedText(texto);
     }

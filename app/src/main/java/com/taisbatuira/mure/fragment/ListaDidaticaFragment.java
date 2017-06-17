@@ -12,8 +12,9 @@ import android.widget.ListView;
 
 import com.taisbatuira.mure.ConceitoActivity;
 import com.taisbatuira.mure.ConceitoDAO;
+import com.taisbatuira.mure.Firebase;
 import com.taisbatuira.mure.R;
-import com.taisbatuira.mure.adapter.ListaOrdenadaAdapter;
+import com.taisbatuira.mure.adapter.ListaDidaticaAdapter;
 import com.taisbatuira.mure.conceitos.Conceito;
 
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
  * Created by taisbatuira on 06/06/17.
  */
 
-public class ListaOrdenadaFragment extends Fragment {
+public class ListaDidaticaFragment extends Fragment {
 
     private ListView lista;
 
@@ -31,9 +32,9 @@ public class ListaOrdenadaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        View layout = inflater.inflate(R.layout.fragment_lista_ordenada, container, false);
+        View layout = inflater.inflate(R.layout.fragment_lista_didatica, container, false);
 
-        this.lista = (ListView) layout.findViewById(R.id.lista_ordenada);
+        this.lista = (ListView) layout.findViewById(R.id.lista_didatica);
 
         registerForContextMenu(this.lista);
 
@@ -47,6 +48,8 @@ public class ListaOrdenadaFragment extends Fragment {
                 Intent i = new Intent(getActivity(), ConceitoActivity.class);
                 i.putExtra("CONCEITO_CONSULTADO",conceito);
                 startActivity(i);
+
+                Firebase.consultouConteudo("LISTA DIDÁTICA",conceito,getActivity());
             }
         });
         return layout;
@@ -62,7 +65,7 @@ public class ListaOrdenadaFragment extends Fragment {
         ConceitoDAO dao = new ConceitoDAO(getActivity());
         List<Conceito> conceitos = dao.listaDeConceitos(ConceitoDAO.ORDEM_DIDATICA);
 
-        ListaOrdenadaAdapter adapter = new ListaOrdenadaAdapter(getActivity(), conceitos);
+        ListaDidaticaAdapter adapter = new ListaDidaticaAdapter(getActivity(), conceitos);
 
         lista.setAdapter(adapter);
     }

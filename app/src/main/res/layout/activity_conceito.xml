@@ -17,7 +17,7 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="30dp"
             android:text="Classe"
-            android:textSize="32sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
@@ -28,7 +28,7 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="30dp"
             android:text="Uma classe eh tipo uma receita de bolo"
-            android:textSize="18sp"
+            android:textSize="17sp"
             />
 
         <!--<TextView-->

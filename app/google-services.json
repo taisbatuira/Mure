@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "810349048029",
+    "firebase_url": "https://mure-882ac.firebaseio.com",
+    "project_id": "mure-882ac",
+    "storage_bucket": "mure-882ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810349048029:android:700dc778c2d82ed0",
+        "android_client_info": {
+          "package_name": "com.taisbatuira.mure"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810349048029-t7dag79qa9oq0ta21v7c8k7i3p8vk4ev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSVHSjiIYf4sep99XvGJk2wuSEDzH0Mq8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

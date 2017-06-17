@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.taisbatuira.mure"
-        minSdkVersion 21
+        minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -21,6 +21,9 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    compile 'com.google.firebase:firebase-core:9.6.1'
+
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -32,3 +35,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:cardview-v7:25.2.0'
 }
+
+apply plugin: 'com.google.gms.google-services'

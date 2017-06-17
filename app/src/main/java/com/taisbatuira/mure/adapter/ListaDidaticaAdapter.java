@@ -16,12 +16,12 @@ import java.util.List;
  * Created by taisbatuira on 07/06/17.
  */
 
-public class ListaOrdenadaAdapter extends BaseAdapter {
+public class ListaDidaticaAdapter extends BaseAdapter {
 
     private List<Conceito> conceitos;
     private Context context;
 
-    public ListaOrdenadaAdapter(Context context, List<Conceito> conceitos) {
+    public ListaDidaticaAdapter(Context context, List<Conceito> conceitos) {
         this.context = context;
         this.conceitos = conceitos;
     }

@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import com.taisbatuira.mure.ConceitoActivity;
 import com.taisbatuira.mure.ConceitoDAO;
+import com.taisbatuira.mure.Firebase;
 import com.taisbatuira.mure.R;
 import com.taisbatuira.mure.adapter.ListaAlfabeticaAdapter;
 import com.taisbatuira.mure.conceitos.Conceito;
@@ -49,6 +50,8 @@ public class ListaAlfabeticaFragment extends Fragment {
                 Intent i = new Intent(getActivity(), ConceitoActivity.class);
                 i.putExtra("CONCEITO_CONSULTADO",conceito);
                 startActivity(i);
+
+                Firebase.consultouConteudo("LISTA ALFABÉTICA",conceito,getActivity());
             }
         });
         return layout;

@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.taisbatuira.mure.fragment.ListaAlfabeticaFragment;
-import com.taisbatuira.mure.fragment.ListaOrdenadaFragment;
+import com.taisbatuira.mure.fragment.ListaDidaticaFragment;
 
 /**
  * Created by taisbatuira on 07/06/17.
@@ -13,13 +13,13 @@ import com.taisbatuira.mure.fragment.ListaOrdenadaFragment;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     private ListaAlfabeticaFragment fragmentAlfabetica;
-    private ListaOrdenadaFragment fragmentOrdenada;
+    private ListaDidaticaFragment fragmentDidatica;
 
 
-    public PagerAdapter(FragmentManager fm, ListaAlfabeticaFragment fragmentAlfabetica, ListaOrdenadaFragment fragmentOrdenada) {
+    public PagerAdapter(FragmentManager fm, ListaAlfabeticaFragment fragmentAlfabetica, ListaDidaticaFragment fragmentDidatica) {
         super(fm);
         this.fragmentAlfabetica = fragmentAlfabetica;
-        this.fragmentOrdenada = fragmentOrdenada;
+        this.fragmentDidatica = fragmentDidatica;
 
     }
 
@@ -35,7 +35,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
-            return fragmentOrdenada;
+            return fragmentDidatica;
         } else {
             return fragmentAlfabetica;
         }
