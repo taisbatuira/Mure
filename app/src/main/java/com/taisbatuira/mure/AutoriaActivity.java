@@ -17,7 +17,7 @@ public class AutoriaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_autoria);
 
         final String P1 = "\t\t\t\t"; // PARAGRAFO
-        String autoriaConteudo = P1 + "Esta aplicação e seu conteúdo são de autoria de Tais Batuira.\n" +
+        String autoriaConteudo = P1 + "Esta aplicação e seu conteúdo são de autoria própria.\n" +
                  P1 + "Os conceitos aqui apresentados encontram-se disponíveis em: ";
         String autoriaLink = "https://desvendandomobile.wordpress.com";
 

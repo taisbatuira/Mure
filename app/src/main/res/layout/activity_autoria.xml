@@ -27,6 +27,7 @@
         />
 
     <TextView
+        android:layout_weight="0.9"
         android:id="@+id/autoria_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,4 +40,17 @@
         android:textColor="@color/colorPrimary"
         />
 
+    <TextView
+        android:layout_weight="0.1"
+        android:id="@+id/autoria_Tais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="10dp"
+        android:text="©TaisBatuira"
+        android:textSize="15sp"
+        android:gravity="center"
+        />
 </LinearLayout>

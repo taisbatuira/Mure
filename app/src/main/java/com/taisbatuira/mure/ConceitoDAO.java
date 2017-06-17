@@ -134,7 +134,8 @@ public class ConceitoDAO extends SQLiteOpenHelper{
                         L2 + P2 + " if (a == b) {" +
                         L2 + P2 + P2 + " return \"iguais\";" +
                         L2 + P2 + " } else {" +
-                        L2 + P2 + P2 + " return \"diferentes\";",
+                        L2 + P2 + P2 + " return \"diferentes\";"+
+                        L2 + P2 + " }",
                 "titulo");
 
         insere(db, 5.0, "ESTRUTURAS DE CONTROLE - CONDIÇÃO",
@@ -150,6 +151,8 @@ public class ConceitoDAO extends SQLiteOpenHelper{
 
         insere(db, 6.0, "IF / ELSE",
                 P1 + "Estrutura que permite estipular uma ou mais condições para disparar um evento específico.\n" +
+                        L1 +
+                        P1 + "Em texto corrido, podemos ler \"se (if) a condição é verdadeira, faça isso; senão (else), faça aquilo\".\n" +
                         L1 +
                         P1 + "Em situações com mais de uma condição, usamos símbolos auxiliares: \n" +
                         P1 + "- && (E / AND) - Ambas condições devem ser verdadeiras para que a sentença retorne true;\n" +
