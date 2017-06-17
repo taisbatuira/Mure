@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConceitoActivity"/>
+        <activity android:name=".AutoriaActivity"/>
     </application>
 
 </manifest>

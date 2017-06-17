@@ -1,5 +1,6 @@
 package com.taisbatuira.mure.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import com.taisbatuira.mure.conceitos.Conceito;
  * Created by taisbatuira on 19/05/17.
  */
 
+@SuppressLint("ValidFragment")
 public class ExemploFragment extends Fragment {
 
     private Conceito conceito;

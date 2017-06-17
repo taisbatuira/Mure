@@ -1,10 +1,13 @@
 package com.taisbatuira.mure;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.taisbatuira.mure.adapter.PagerAdapter;
 import com.taisbatuira.mure.fragment.ListaAlfabeticaFragment;
@@ -30,6 +33,20 @@ public class MainActivity extends AppCompatActivity {
         pager.setAdapter(pagerAdapter);
         tabs.setupWithViewPager(pager);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent(MainActivity.this,
+                AutoriaActivity.class);
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
     }
 
 
