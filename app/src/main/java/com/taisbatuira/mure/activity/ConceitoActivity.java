@@ -18,21 +18,12 @@ import java.util.List;
 public class ConceitoActivity extends AppCompatActivity {
 
     private Conceito conceito;
-    private Conceito proximoConceito;
-
+    List<Conceito> conceitos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conceito);
-
-//        Intent intent = getIntent();
-//        String from = intent.getStringExtra("CONCEITO_CONSULTADO");
-//        if ("CONCEITO_CONSULTADO".equals(from)) {
-//            this.conceito = (Conceito) intent.getSerializableExtra("CONCEITO_CONSULTADO");
-//        } else {
-//            this.conceito = (Conceito) intent.getSerializableExtra("PROXIMO_CONCEITO");
-//        }
 
         this.conceito = (Conceito) getIntent().getSerializableExtra("CONCEITO_CONSULTADO");
         System.out.println("1: " + this.conceito.getTitulo());
@@ -55,36 +46,70 @@ public class ConceitoActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_didatica, menu);
+
+        if (posicao(this.conceito) == 0) {
+            menu.findItem(R.id.menu_anterior).setVisible(false);
+        } else if (posicao(this.conceito) == (conceitos.size()-1)) {
+            menu.findItem(R.id.menu_proximo).setVisible(false);
+        }
+
         return true;
+
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        Conceito proximo = proximo(conceito);
-
         Intent intent = new Intent(ConceitoActivity.this,
-                ConceitoDidaticaActivity.class);
+                ConceitoActivity.class);
 
-        intent.putExtra("PROXIMO_CONCEITO", proximo);
-        startActivity(intent);
+        switch (item.getItemId()) {
+            case R.id.menu_anterior:
+                Conceito anterior = anterior(this.conceito);
+                intent.putExtra("CONCEITO_CONSULTADO", anterior);
+                startActivity(intent);
+                return true;
+
+            case R.id.menu_proximo:
+                Conceito proximo = proximo(this.conceito);
+                intent.putExtra("CONCEITO_CONSULTADO", proximo);
+                startActivity(intent);
+                return true;
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    private int posicao(Conceito conceito) {
+        ConceitoDAO dao = new ConceitoDAO(this);
+        List<Conceito> conceitos = dao.listaDeConceitos(ConceitoDAO.ORDEM_DIDATICA);
+        this.conceitos = conceitos;
+
+        for (int i = 0; i < conceitos.size(); i++) {
+            if (conceito.getTitulo().equals(conceitos.get(i).getTitulo())) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    private Conceito anterior(Conceito conceito) {
+
+        int i = posicao(this.conceito);
+        if (i > 0) {
+            Conceito conceitoAnterior = conceitos.get(i-1);
+            System.out.println(this.conceito.getTitulo());
+            System.out.println("anterior: " + conceitoAnterior.getTitulo());
+            return conceitoAnterior;
+        }
+        return conceito ;
     }
 
     private Conceito proximo(Conceito conceito) {
 
-        ConceitoDAO dao = new ConceitoDAO(this);
-        List<Conceito> conceitos = dao.listaDeConceitos(ConceitoDAO.ORDEM_DIDATICA);
-
-        Conceito proximoConceito = null;
-
-        for (int i = 0; i < conceitos.size(); i++) {
-            if (this.conceito.getTitulo().equals(conceitos.get(i).getTitulo())) {
-                proximoConceito = conceitos.get(i + 1);
-                return proximoConceito;
-            }
-        }
-        return null;
+        int i = posicao(conceito);
+        Conceito proximoConceito = conceitos.get(i+1);
+        return proximoConceito;
     }
 
     @Override
@@ -92,4 +117,5 @@ public class ConceitoActivity extends AppCompatActivity {
         Intent intent = new Intent(ConceitoActivity.this,MainActivity.class);
         startActivity(intent);
     }
+
 }

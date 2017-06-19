@@ -18,7 +18,6 @@
         </activity>
         <activity android:name=".activity.ConceitoActivity"/>
         <activity android:name=".activity.AutoriaActivity"/>
-        <activity android:name=".activity.ConceitoDidaticaActivity"/>
     </application>
 
 </manifest>

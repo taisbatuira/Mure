@@ -225,7 +225,7 @@ public class ConceitoDAO extends SQLiteOpenHelper{
                         L1 + P1 + "São atributos do tipo primitivo e a visibilidade pode ser dos tipos private, public ou protected.",
                 " public class Animal {\n" +
                         L2 + P2 + " private int patas;\n" +
-                        L2 + P2 + " private string tipo;\n" +
+                        L2 + P2 + " private String tipo;\n" +
                         L2 + P2 +"...\n" +
                         L2 + "}\n",
                 "subtitulo");
@@ -255,7 +255,7 @@ public class ConceitoDAO extends SQLiteOpenHelper{
                         P1 + "É o nome ou a primeira linha do método, ou seja, a forma como é chamado quando usado, passando os parâmetros solicitados.",
                 " public class Animal {\n" +
                         L2 + P2 + " private int patas;\n" +
-                        L2 + P2 + " private string tipo;\n" +
+                        L2 + P2 + " private String tipo;\n" +
                         L2 +
                         L2 + P2 + "...\n" +
                         L2 +
@@ -269,8 +269,8 @@ public class ConceitoDAO extends SQLiteOpenHelper{
                 P1 + "É um método de classe, e não um método de objeto. Ou seja, um objeto não pode chamar este método pois ele não compila em tempo de execução, ele só pode ser chamado pela classe daquele objeto. \n" +
                         L1 + P1 + "Portanto, métodos estáticos não podem ser sobrescritos.",
                 " public class Animal {\n" +
-                        L2 + P2 + " private string voa;\n" +
-                        L2 + P2 + " private string anda;\n" +
+                        L2 + P2 + " private String voa;\n" +
+                        L2 + P2 + " private String anda;\n" +
                         L2 +
                         L2 + P2 + "...\n" +
                         L2 +
@@ -298,7 +298,7 @@ public class ConceitoDAO extends SQLiteOpenHelper{
         insere(db, 15.0, "MODIFICADORES DE ACESSO",
                 P1 + "Definem as permissões de acesso dos atributos, métodos, estruturas de classes. Eles que dizem se um determinado dado pode ser acessado por qualquer um ou só dentro da própria classe, por exemplo. \n",
                 " public int i=0;" +
-                        L2 +" private string c = \"cachorro\"",
+                        L2 +" private String c = \"cachorro\"",
                 "titulo");
 
         insere(db, 16.0, "PUBLIC",
@@ -338,11 +338,11 @@ public class ConceitoDAO extends SQLiteOpenHelper{
                         L1 + P1 + "Com isso, ao instanciar a classe e criar um objeto, usam-se os métodos públicos para alterar os atributos daquele objeto criado, sem acessar os atributos ou comportamentos privados.\n",
                 " public class Animal {\n" +
                         L2 + P2 + " private int patas;\n" +
-                        L2 + P2 + " private string tipo;\n" +
+                        L2 + P2 + " private String tipo;\n" +
                         L2 +
                         L2 + P2 + "...\n" +
                         L2 +
-                        L2 + P2 + " private string late() {\n" +
+                        L2 + P2 + " private String late() {\n" +
                         L2 + P2 + P2 + " return \"au au\";\n" +
                         L2 + P2 + "}\n" +
                         L2 + "}\n",
@@ -353,9 +353,9 @@ public class ConceitoDAO extends SQLiteOpenHelper{
                         L1 + P1 + "O Construtor é uma estrutura chamada com as especificações para construção de um objeto daquela classe, ou seja, se existem valores específicos necessários, eles devem ser passados no construtor e, ao instanciar a classe, são passados como parâmetros para criação do objeto.\n",
                 " public class Animal{\n" +
                         L2 + P2 + " private int patas;\n" +
-                        L2 + P2 + " private string tipo;\n" +
+                        L2 + P2 + " private String tipo;\n" +
                         L2 +
-                        L2 + P2 + " public Animal (int patas, string tipo) {\n" +
+                        L2 + P2 + " public Animal (int patas, String tipo) {\n" +
                         L2 + P2 + P2 + " this.patas = patas;\n" +
                         L2 + P2 + P2 + " this.tipo = tipo;\n" +
                         L2 + P2 + "}\n" +
