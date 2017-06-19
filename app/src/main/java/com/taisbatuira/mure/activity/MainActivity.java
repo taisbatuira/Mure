@@ -1,4 +1,4 @@
-package com.taisbatuira.mure;
+package com.taisbatuira.mure.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.taisbatuira.mure.R;
 import com.taisbatuira.mure.adapter.PagerAdapter;
 import com.taisbatuira.mure.fragment.ListaAlfabeticaFragment;
 import com.taisbatuira.mure.fragment.ListaDidaticaFragment;

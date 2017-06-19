@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.taisbatuira.mure.ConceitoActivity;
+import com.taisbatuira.mure.activity.ConceitoActivity;
 import com.taisbatuira.mure.ConceitoDAO;
 import com.taisbatuira.mure.Firebase;
 import com.taisbatuira.mure.R;

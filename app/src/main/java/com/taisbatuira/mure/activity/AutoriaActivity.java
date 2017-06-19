@@ -1,9 +1,11 @@
-package com.taisbatuira.mure;
+package com.taisbatuira.mure.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.taisbatuira.mure.R;
 
 /**
  * Created by taisbatuira on 17/06/17.
