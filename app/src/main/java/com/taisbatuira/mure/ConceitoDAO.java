@@ -27,7 +27,7 @@ public class ConceitoDAO extends SQLiteOpenHelper{
 
 
     public ConceitoDAO(Context context) {
-        super(context,"mure", null, 1);
+        super(context,"mure", null, 2);
     }
 
     @Override
